@@ -1,0 +1,157 @@
+﻿@model mini1.Models.UserModel1
+@{
+    ViewBag.Title = "Register";
+}
+
+
+
+<fieldset>
+    <legend>
+        User Registration
+    </legend>
+    @using (Html.BeginForm("Register", "Account", "FormMethod.Post"))
+    {
+<table>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.UserId)
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.UserId, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(m => m.UserId, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.FirstName)
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.LastName)
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Gender)
+        </td>
+        <td>
+            @Html.TextBoxFor(m => m.Gender, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(m => m.Gender, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.DOB)
+        </td>
+        <td>
+            @Html.EditorFor(m => m.DOB, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(m => m.DOB, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+
+
+
+    @*<tr>
+            <td>
+                @Html.LabelFor(m => m.Contact_Number)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Contact_Number, new { @class = "error" })
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                @Html.ValidationMessageFor(m => m.Contact_Number, null, new { @class = "text text-danger" })
+            </td>
+        </tr>*@
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Password)
+        </td>
+        <td>
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(m => m.Address)
+        </td>
+        <td>
+            @Html.TextAreaFor(m => m.Address, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            @Html.ValidationMessageFor(m => m.Address, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <input type="submit" value="Register" />
+                    </td>
+                    <td>
+                        <input type="reset" value="Reset" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+  
+
+      @Html.Raw(ViewData["msg"])
+
+</table>   
+    }
+
+</fieldset>
